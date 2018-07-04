@@ -1,0 +1,9 @@
+--- # webserver set up
+- hosts: webserver
+  user: pune
+  become: yes
+  tasks:
+  - name: installing a package
+    yum: name=httpd state=installed
+  - name: started httpd 
+    service: name=httpd state=started
